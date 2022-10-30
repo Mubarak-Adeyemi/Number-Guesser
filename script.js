@@ -110,6 +110,7 @@ start.addEventListener('click',  ()=>{
 
     setNameModal.style.display = 'flex';
     alertMessage.textContent = "Guess a number within the range of 1 and 2";
+    alertMessage.style.color = '#D2001A';
     rangeEnd = 2
     genNum = Math.floor((Math.random()*rangeEnd)+1);
     console.log('Generated Number: ' , genNum ,'Range End: ',rangeEnd);
