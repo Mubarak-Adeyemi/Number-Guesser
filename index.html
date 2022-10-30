@@ -33,6 +33,11 @@
         #alert{
             color: #D2001A;
         }
+        #res-or-cont-modal{
+            height: 100vh;
+            background-color: hsla(20, 10%, 10%, 0.5);
+            display: none;
+        }
         /* .modal{
             position: absolute;
             top: -100vh;
@@ -40,10 +45,10 @@
             opacity: 0.5;
             animation: dropDownOut 3s;
         } */
-        @keyframes dropDownOut{
+        /* @keyframes dropDownOut{
             0% {top: -100vh;}
             100% {top: 0;}
-        }
+        } */
         
     </style>
 </head>
@@ -53,7 +58,7 @@
     
             <!-- In MAKING -->
     <!-- ===================================
-    -----------Drop Modal for next stae-----
+    -----------Drop Modal for next stage-----
     -----------or Game end------------------
     ======================================== -->
    
@@ -63,11 +68,18 @@
         </div>
     </div> -->
 
+    <div class="modal modal-dialog-centered" id="res-or-cont-modal">
+        <div class="modal-body p-5 bg-gradient d-flex justify-content-evenly">
+            <input type="button" value="Continue" class="btn bg-info text-light fw-bold" id="cont">
+            <input type="button" value="Restart with new name" class="btn bg-gradient bg-danger text-light" id="new-name">
+        </div>
+    </div>
+
     <div class="container">
         <div class="card bg-secondary">
             <p class="text-light text-bold m-2 fw-bold" id="user-div">Player Name: <span class="user-name fw-bolder"></span> </p>
             <p class="text-light text-bold m-2 fw-bold" id="user-div">Level: <span class="level fw-bolder"></span> </p>
-            <div class="alert bg-warning text-danger fw-bold mx-5" role="alert" id="alert" >Guess a number within the range of 1 and <span class="range-end">2</span></div>
+            <div class="alert bg-warning fw-bold mx-5" role="alert" id="alert" >Guess a number within the range of 1 and <span class="range-end">2</span></div>
             <div class="card-body d-flex flex-column">
                 <input type="text" class="form-control m-2" id="guess-field">
                 <div class="btns d-flex justify-content-between">

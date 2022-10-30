@@ -7,8 +7,11 @@ const start = document.getElementById("start");
 const inputF = document.getElementById("guess-field");
 const alertMessage = document.getElementById("alert");
 const stageLevel = document.querySelector(".level");
-const checkBtn = document.querySelector('#check');
-const modal = document.querySelector(".modal");
+const checkBtn = document.querySelector("#check");
+const setNameModal = document.getElementById("res-or-cont-modal");
+const continueBtn = document.getElementById("cont");
+const newNameBtn = document.getElementById("new-name");
+// const modal = document.querySelector(".modal");
 
 
 /*======================================================
@@ -62,7 +65,7 @@ function lossEffect (){
 ------------------GUESSING GAME ENGINE------------------
 ========================================================*/
 
-check.addEventListener('click', ()=> {
+checkBtn.addEventListener('click', ()=> {
     
     
     let numGuess = Number(inputF.value);
@@ -89,6 +92,7 @@ check.addEventListener('click', ()=> {
         inputF.value = '';
         inputF.focus();
         lossEffect()
+        check.style.display = 'none';
 
 
     }
@@ -102,21 +106,35 @@ check.addEventListener('click', ()=> {
 /*======================================================
 ------------------------RESET GAME----------------------
 ========================================================*/
-start.addEventListener('click', ()=>{
+start.addEventListener('click',  ()=>{
 
+    setNameModal.style.display = 'flex';
     alertMessage.textContent = "Guess a number within the range of 1 and 2";
     rangeEnd = 2
     genNum = Math.floor((Math.random()*rangeEnd)+1);
     console.log('Generated Number: ' , genNum ,'Range End: ',rangeEnd);
 
-    getName = prompt("What is your name?")
-    userName.textContent = getName.toUpperCase();
-
-
 
     level = 1;
     stageLevel.textContent = level;
     inputF.value = '';
-})
+    check.style.display = 'flex';
+});
+
+// Continue with current player name
+continueBtn.addEventListener('click', ()=> {
+
+    setNameModal.style.display = 'none';
+});
+
+// Set new name for the player
+newNameBtn.addEventListener('click', ()=> {
+
+    getName = prompt("What is your name?")
+    userName.textContent = getName.toUpperCase();
+    setNameModal.style.display = 'none';
+
+});
+
 
 
