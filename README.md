@@ -13,6 +13,8 @@ Moving a stage forward expands the number range generated (for example, from "1 
 5. Adding a function to restart the game and reset it.
 6. Functions are created for sound notification.
 
+### Updated Version
+When clicking the start button a modal drops with two options, either continue with the player name or reset the player name.
 ### Replit link: https://replit.com/@MubarakAdeyemi/Number-Guesser?v=1
 
 
